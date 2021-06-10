@@ -6,6 +6,7 @@ if ('serviceWorker' in navigator) {
 }
 
 let btnOpenFile = document.querySelector('#btnOpenFile');
+let btnSaveFile = document.querySelector('#btnSaveFile');
 
 let fileHandle;
 
@@ -15,6 +16,24 @@ btnOpenFile.addEventListener('click', async () => {
 
     console.log(fileHandle);
 });
+
+
+btnSaveFile.addEventListener('click', async () => {
+
+    const options = {
+        types: [
+            {
+                description: 'Text Files',
+                accept: {
+                    'text/plain': ['.txt'],
+                },
+            },
+        ],
+    };
+    const handle = await window.showSaveFilePicker(options);
+    return handle;
+})
+
 
 
 
