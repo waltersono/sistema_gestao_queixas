@@ -1,12 +1,10 @@
-var dbPromisse = idb.open('pwa_db', 1, function (upgradeDB) {
+var dbPromisse = idb.open('sgq', 1, function (upgradeDB) {
 
-    if (!upgradeDB.objectStoreNames.contains('user')) {
-        upgradeDB.createObjectStore('user', { keyPath: 'id', autoIncrement: true });
+    if (!upgradeDB.objectStoreNames.contains('cases')) {
+        upgradeDB.createObjectStore('cases', { keyPath: 'id', autoIncrement: true });
     }
 
-    if (!upgradeDB.objectStoreNames.contains('sync-user-info')) {
-        upgradeDB.createObjectStore('sync-user-info', { keyPath: 'id', autoIncrement: true });
-    }
+
 
 });
 

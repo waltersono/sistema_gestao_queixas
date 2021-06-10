@@ -5,42 +5,45 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-if ('showOpenFilePicker' in window) {
-    alert('showOpenFilePicker exists');
-} else {
-    alert('showOpenFilePicker exists');
-}
+let btnSave = document.querySelector('#btnSave');
 
-let btnOpenFile = document.querySelector('#btnOpenFile');
-let btnSaveFile = document.querySelector('#btnSaveFile');
+let btnShow = document.querySelector('#btnShow');
 
-let fileHandle;
+const cases = [
+    { province: 'Niassa', district: 'Lichinga', fullname: 'Walter', gender: 'M', type: '0' },
+    { province: 'Niassa', district: 'Cuamba', fullname: 'Mauro', gender: 'M', type: '2' },
+    { province: 'Maputo Cidade', district: 'Kamavota', fullname: 'Tucha', gender: 'F', type: '1' },
+    { province: 'Gaza', district: 'Chokwe', fullname: 'Lisley', gender: 'F', type: '3' }
+];
 
-btnOpenFile.addEventListener('click', async () => {
 
-    [fileHandle] = await window.showOpenFilePicker();
 
-    console.log(fileHandle);
+btnSave.addEventListener('click', () => {
+
+    if ('indexedDB' in window) {
+        writeData('cases', getRandomCase());
+    }
+
+});
+
+btnShow.addEventListener('click', () => {
+
+    readAllData('cases')
+        .then(function (data) {
+            console.log(data);
+
+            for (let i = 0; i < data.length; i++) {
+                alert(data[i].fullname);
+            }
+        });
+
+
 });
 
 
-btnSaveFile.addEventListener('click', async () => {
-
-    const options = {
-        types: [
-            {
-                description: 'Text Files',
-                accept: {
-                    'text/plain': ['.txt'],
-                },
-            },
-        ],
-    };
-    const handle = await window.showSaveFilePicker(options);
-    return handle;
-})
-
-
-
+function getRandomCase() {
+    let randomNumber = Math.floor(Math.random() * cases.length);
+    return cases[randomNumber];
+}
 
 
