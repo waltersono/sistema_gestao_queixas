@@ -1,0 +1,16 @@
+{
+    "name": "Sistema de Gestao de Queixas",
+    "short_name": "SGQ",
+    "description": "Sistema de Gestao de Queixas",
+    "scope": ".",
+    "start_url": "index.html",
+    "background_color": "#FFF",
+    "theme_color": "#000",
+    "orientation": "portrait-primary",
+    "display": "standalone",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+        {}
+    ]
+}

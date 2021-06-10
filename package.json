@@ -1,0 +1,16 @@
+{
+  "name": "sistema_gestao_queixas",
+  "version": "1.0.0",
+  "description": "Sistema de Gestao de Queixas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "queixas",
+    "reclamacoes",
+    "casos"
+  ],
+  "author": "Walter Sono",
+  "license": "ISC"
+}
