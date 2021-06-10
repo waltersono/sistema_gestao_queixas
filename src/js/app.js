@@ -6,6 +6,7 @@ if ('serviceWorker' in navigator) {
 }
 
 const btnSave = document.querySelector('#btnSave');
+const btnRemove = document.querySelector('#btnRemove');
 
 
 
@@ -22,9 +23,17 @@ btnSave.addEventListener('click', () => {
 
     if ('indexedDB' in window) {
         writeData('cases', getRandomCase());
+        alert('Data saved');
     }
 
 });
+
+btnRemove.addEventListener('click', () => {
+    if ('indexedDB' in window) {
+        removeAllData('cases');
+        alert('All data removed');
+    }
+})
 
 
 function getRandomCase() {
