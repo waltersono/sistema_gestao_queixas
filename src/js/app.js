@@ -5,11 +5,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-let btnSave = document.querySelector('#btnSave');
+const btnSave = document.querySelector('#btnSave');
 
-let btnShow = document.querySelector('#btnShow');
 
-let btnSend = document.querySelector('#btnSend');
 
 const cases = [
     { province: 'Niassa', district: 'Lichinga', fullname: 'Walter', gender: 'M', type: '0' },
@@ -28,33 +26,11 @@ btnSave.addEventListener('click', () => {
 
 });
 
-btnShow.addEventListener('click', () => {
-
-    readAllData('cases')
-        .then(function (data) {
-            console.log(data);
-
-            for (let i = 0; i < data.length; i++) {
-                alert(data[i].fullname);
-            }
-        });
-
-
-});
-
 
 function getRandomCase() {
     let randomNumber = Math.floor(Math.random() * cases.length);
     return cases[randomNumber];
 }
-
-btnSend.addEventListener('click', () => {
-
-    fetch('http://sib.inas.gov.mz/sibmobile.apk', {
-        mode: 'cors',
-        method: 'GET'
-    });
-});
 
 
 

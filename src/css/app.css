@@ -44,3 +44,22 @@ body {
     transform: translateY(-1rem);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
 }
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background-color: black;
+    color: white;
+}
+
+.table td,
+.table th {
+    border: 1px solid gray;
+}
+
+.table tr:nth-child(odd) {
+    background-color: gainsboro;
+}
