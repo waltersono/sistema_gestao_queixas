@@ -15,7 +15,15 @@ body {
     font-size: 1.6rem;
 }
 
-.btn {
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:link,
+.btn:visited {
     background-color: orangered;
     padding: 0.5em 1.5em;
     font-size: 2rem;
@@ -23,6 +31,14 @@ body {
     border: none;
     outline: none;
     border-radius: 1rem;
-    display: block;
-    margin: 1rem auto;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover,
+.btn:active {
+    transform: translateY(-1rem);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
 }
