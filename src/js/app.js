@@ -9,6 +9,8 @@ let btnSave = document.querySelector('#btnSave');
 
 let btnShow = document.querySelector('#btnShow');
 
+let btnSend = document.querySelector('#btnSend');
+
 const cases = [
     { province: 'Niassa', district: 'Lichinga', fullname: 'Walter', gender: 'M', type: '0' },
     { province: 'Niassa', district: 'Cuamba', fullname: 'Mauro', gender: 'M', type: '2' },
@@ -45,5 +47,15 @@ function getRandomCase() {
     let randomNumber = Math.floor(Math.random() * cases.length);
     return cases[randomNumber];
 }
+
+btnSend.addEventListener('click', () => {
+
+    fetch('http://sib.inas.gov.mz/sibmobile.apk', {
+        mode: 'cors',
+        method: 'GET'
+    });
+});
+
+
 
 
