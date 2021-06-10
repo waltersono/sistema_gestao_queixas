@@ -5,6 +5,12 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+if ('showOpenFilePicker' in window) {
+    alert('showOpenFilePicker exists');
+} else {
+    alert('showOpenFilePicker exists');
+}
+
 let btnOpenFile = document.querySelector('#btnOpenFile');
 let btnSaveFile = document.querySelector('#btnSaveFile');
 
