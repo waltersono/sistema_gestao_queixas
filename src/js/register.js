@@ -41,7 +41,9 @@ btnPrevious.forEach(button => {
 
 btnSave.addEventListener('click', () => {
 
-    writeData('cases', formData)
+    let finalData = getValues();
+
+    writeData('cases', finalData)
         .then(() => {
             window.location.href = "index.html";
             showToastr('Dados salvos');
@@ -50,5 +52,5 @@ btnSave.addEventListener('click', () => {
             console.log(err, 'Error saving form data to database');
         });
 
-    console.log('Form save successfully: ', formData);
 });
+

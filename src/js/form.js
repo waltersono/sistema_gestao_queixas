@@ -5,7 +5,9 @@ let documentType = document.querySelector('#document_type').value;
 let documentyNumber = document.querySelector('#document_number').value;
 let caseType = document.querySelector('#case_type').value;
 let details = document.querySelector('#details').value;
+let timestamp;
 let formData = {};
+const data = new Date();
 
 
 function getValues() {
@@ -16,6 +18,8 @@ function getValues() {
     documentyNumber = document.querySelector('#document_number').value;
     caseType = document.querySelector('#case_type').value;
     details = document.querySelector('#details').value;
+    timestamp = data.getDay() + '-' + data.getMonth + '-' + data.getFullYear() + ' ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds();
+
 
     formData = {
         code: code,
@@ -24,8 +28,11 @@ function getValues() {
         document_type: documentType,
         document_number: documentyNumber,
         case_type: caseType,
-        details: details
+        details: details,
+        timestamp: timestamp
     };
+
+    return formData;
 }
 
 

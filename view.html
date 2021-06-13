@@ -5,11 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Visualizar queixas</title>
+    <link rel="stylesheet" href="src/css/app.css">
+    <link rel="stylesheet" href="src/css/view.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
 
+    <header class="header">
+        <div class="container">
+            <div class="h1 header__title">Queixas registadas</div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="case">
+                <div class="case__item">
+                    <div class="case__text-box">
+                        <p class="case__id">Queixa #1</p>
+                        <p class="case__fullname">Nome: Joao Macuvele</p>
+                        <p class="case__type">Tipo: Nao for inscrito</p>
+                        <p class="case__timestamp">Data e hora: 2021-06-13 15:22:34</p>
+                    </div>
+                    <div class="case__action-box">
+                        <button href="#" class="action__btn action__btn--see">Y</button>
+                        <button href="#" class="action__btn action__btn--remove">X</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+    <script src="src/js/fetch.js"></script>
+    <script src="src/js/promise.js"></script>
+    <script src="src/js/idb.js"></script>
+    <script src="src/js/dao.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/view.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,35 @@
+.case {
+}
+
+.case__item {
+    display: flex;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+}
+
+.case__text-box {
+    flex: 1;
+}
+
+.action__btn,
+.action__btn:link,
+.action__btn:visited {
+    text-decoration: none;
+    color: #fff;
+    background-color: gray;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    border: none;
+    font-weight: bold;
+}
+
+.action__btn--remove {
+    background-color: orangered;
+}
+
+.action__btn--see {
+    background-color: blue;
+}
