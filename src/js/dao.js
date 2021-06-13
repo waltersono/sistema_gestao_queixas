@@ -1,10 +1,12 @@
 var dbPromisse = idb.open('sgq', 1, function (upgradeDB) {
 
+    if (!upgradeDB.objectStoreNames.contains('settings')) {
+        upgradeDB.createObjectStore('settings', { keyPath: 'id', autoIncrement: true });
+    }
+
     if (!upgradeDB.objectStoreNames.contains('cases')) {
         upgradeDB.createObjectStore('cases', { keyPath: 'id', autoIncrement: true });
     }
-
-
 
 });
 

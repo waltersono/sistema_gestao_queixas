@@ -12,11 +12,22 @@
 
 <body>
 
-    <h1>PWA</h1>
+    <header class="header">
+        <div class="container">
+            <div class="h1 header__title">Registo de Queixas</div>
+        </div>
+    </header>
 
-    <a href="#" class="btn" id="btnSave">Save to database</a>
-    <a href="#" class="btn" id="btnRemove">Remove Data</a>
-    <a href="stats.html" class="btn">Go to databse</a>
+    <main class="main">
+        <div class="container">
+            <div class="button-group">
+                <a href="register.html" class="btn btn--primary">Registar nova queixa</a>
+                <a href="view.html" class="btn btn--primary">Visualizar queixas salvas</a>
+                <a href="stats.html" class="btn btn--primary">Visualizar estatisticas</a>
+                <a href="settings.html" class="btn btn--primary">Definicoes</a>
+            </div>
+        </div>
+    </main>
 
     <script src="src/js/fetch.js"></script>
     <script src="src/js/promise.js"></script>

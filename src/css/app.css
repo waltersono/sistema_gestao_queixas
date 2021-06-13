@@ -1,3 +1,18 @@
+:root {
+    --color-primary: #009245;
+    --color-primary-dark: #046630;
+    --color-accent: #8c6239;
+    --color-bg: #fefefe;
+    --color-title: #242424;
+    --color-description: #666;
+    --color-toastr: #414141d0;
+
+    --font-title: 2rem;
+    --font-description: 1.5rem;
+    --font-label: 1.8rem;
+    --font-hint: 1.3rem;
+}
+
 *,
 *::after,
 *::before {
@@ -8,58 +23,195 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     box-sizing: border-box;
     font-size: 1.6rem;
+    font-family: sans-serif;
+    background-color: var(--color-bg);
+    height: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+    max-width: 100rem;
+    width: 90%;
+    margin: 0 auto;
 }
 
+.header {
+    height: 60px;
+    color: #fff;
+    background-color: var(--color-primary);
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.main {
+    padding: 1rem 0;
+    position: relative;
+    height: 100%;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.button-group > * {
+    margin-bottom: 1.5rem;
+}
+
+/**** BUTTON ****/
+.btn,
 .btn:link,
 .btn:visited {
-    background-color: orangered;
-    padding: 0.5em 1.5em;
-    font-size: 2rem;
-    color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 1rem;
-    display: inline-block;
     text-decoration: none;
-    transition: all 0.3s;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 1em 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
 }
 
-.btn:hover,
-.btn:active {
-    transform: translateY(-1rem);
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+.btn--primary {
+    color: #fff;
+    background-color: var(--color-primary);
+}
+/**** BUTTON END ****/
+
+/**** SECTION ****/
+.section {
+    margin-bottom: 2rem;
 }
 
-.table {
+.section__title {
+    font-size: var(--font-title);
+    text-transform: uppercase;
+    color: var(--color-title);
+}
+
+.section__description {
+    font-size: var(--font-description);
+    color: var(--color-description);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+/**** SECTION END ****/
+
+/*** FORM ****/
+.form {
+    padding: 1rem 0;
+}
+
+.form__group:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+.form__inline {
+    display: flex;
+}
+
+.text-hint {
+    font-size: var(--font-hint);
+    color: var(--color-description);
+    font-style: italic;
+    font-weight: 100;
+}
+
+.form__label {
+    font-size: var(--font-label);
+    display: block;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.form__input {
     width: 100%;
-    border-spacing: 0;
+    padding: 0.5rem 0;
+    border: none;
+    font-size: var(--font-label);
+    border-bottom: 1px solid var(--color-accent);
 }
 
-.table thead th {
-    background-color: black;
-    color: white;
+.form__input:focus {
+    outline: none;
 }
 
-.table td,
-.table th {
-    border: 1px solid gray;
+.form__select {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: var(--font-label);
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-accent);
 }
 
-.table tr:nth-child(odd) {
-    background-color: gainsboro;
+.form__textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: var(--font-label);
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+    height: 200px;
+    border-radius: 0.5rem;
+}
+
+.form__textarea:focus {
+    outline: none;
+}
+
+.form__select:focus {
+    outline: none;
+}
+
+.form__button-group {
+    display: flex;
+}
+
+.form__btn {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+/*** FORM END ***/
+
+/*** Alerts ***/
+.toastr {
+    display: inline-block;
+    background-color: var(--color-toastr);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.toastr--show {
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

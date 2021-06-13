@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+</head>
+
+<body>
+
+
+    <form action="#" name="form" id="form">
+        <p>
+            <select type="text" placeholder="Delegacao" id="delegation">
+                <option value="">-- Selecione a opcao --</option>
+                <option value="Maputo_Cidade">INAS Maputo Cidade</option>
+                <option value="Matola">INAS Matola</option>
+                <option value="XaiXai">INAS Xai-Xai</option>
+            </select>
+        </p>
+        <p>
+            <input type="text" placeholder="Nome do tecnico" id="fullname">
+        </p>
+
+        <p>
+            <button type="button" id="btnSave">Salvar</button>
+        </p>
+
+    </form>
+
+
+    <script src="src/js/fetch.js"></script>
+    <script src="src/js/promise.js"></script>
+    <script src="src/js/idb.js"></script>
+    <script src="src/js/dao.js"></script>
+    <script src="src/js/settings.js"></script>
+</body>
+
+</html>
